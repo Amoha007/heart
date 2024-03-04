@@ -116,7 +116,10 @@ def str2():
         prediction = model.predict(user_input)
         prediction_proba = model.predict_proba(user_input)
 
-        if prediction[0] == 1:
+        if thalach>130:
+            bg_color = 'red'
+            prediction_result = 'Positive'
+        elif thalach<120:
             bg_color = 'red'
             prediction_result = 'Positive'
         else:
